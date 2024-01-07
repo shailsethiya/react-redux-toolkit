@@ -1,0 +1,139 @@
+{
+  "env": {
+    "node": true,
+    // "commonjs": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "google",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    // 0: disable
+    // 1: Warning
+    // 2: enable
+
+    // warn debugger & console
+    "no-debugger": 1,
+    "no-console": 1,
+
+    "indent": 0,
+
+    // no unused var
+    "no-unused-vars": 2,
+
+    "react/function-component-definition": 1,
+    "import/prefer-default-export": 1,
+    "react/no-array-index-key": 0, // enabling this will not allow to use index as key in map
+    "react/no-unescaped-entities": 0,
+
+    // "trailing-comma": [
+    //   "error",
+    //   {
+    //     "singleline": "never",
+    //     "multiline": {
+    //       "objects": "ignore",
+    //       "arrays": "ignore",
+    //       "functions": "never",
+    //       "typeLiterals": "ignore"
+    //     }
+    //   }
+    // ],
+
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never"
+      }
+    ],
+
+    "padding-line-between-statements": [
+      2,
+      // Always require blank lines after import, except between imports
+      { "blankLine": "always", "prev": "import", "next": "*" },
+      { "blankLine": "any", "prev": "import", "next": "import" },
+      { "blankLine": "always", "prev": "export", "next": "*" },
+      { "blankLine": "any", "prev": "export", "next": "export" },
+      // Always require blank lines before and after every sequence of variable declarations and export
+      // {
+      //   "blankLine": "always",
+      //   "prev": "*",
+      //   "next": ["const", "let", "var", "export"]
+      // },
+      // {
+      //   "blankLine": "always",
+      //   "prev": ["const", "let", "var", "export"],
+      //   "next": "*"
+      // },
+      // {
+      //   "blankLine": "any",
+      //   "prev": ["const", "let", "var", "export"],
+      //   "next": ["const", "let", "var", "export"]
+      // },
+      // Always require blank lines before return statements
+      { "blankLine": "always", "prev": "return", "next": "return" }
+    ],
+
+    // Shows warning if comment is missing for every js file
+    "require-jsdoc": 1,
+    "valid-jsdoc": 1,
+    // Always spacing between curly braces
+    "object-curly-spacing": ["error", "always"],
+    // Always string in double quotes
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    // React proptypes
+    "react/prop-types": 0,
+
+    "import/no-unresolved": 0,
+
+    // Sort member imports alphabetically
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
+        "allowSeparatedGroups": true
+      }
+    ],
+    // Sort imports by alphabetically and by groups
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    // Don't require import extensions
+    "import/extensions": ["error", "never"]
+  }
+}

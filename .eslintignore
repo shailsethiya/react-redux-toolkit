@@ -1,0 +1,13 @@
+.eslintrc.json
+.lintstagedrc.js
+node_modules
+.prettierignore
+.prettierrc.json
+.next
+.husky
+.env*
+yarn.lock
+package-lock.json
+public
+build
+src/strings
